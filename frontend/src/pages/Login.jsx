@@ -1,25 +1,26 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
-    const navigate = useNavigate();
-
     return (
-        <div className="flex items-center justify-center h-full mt-20">
-            <div className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full text-center">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">Welcome to TEAM</h2>
-                <div className="flex flex-col gap-4">
-                    <button
-                        onClick={() => navigate('/candidate')}
-                        className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition"
+        <div className="min-h-[80vh] flex flex-col items-center justify-center p-6">
+            <div className="bg-white rounded-xl shadow-lg p-10 w-full max-w-md text-center">
+                <h1 className="text-3xl font-extrabold text-gray-900 mb-8">Welcome to TEAM</h1>
+
+                <div className="flex flex-col space-y-4">
+                    {/* Notice this now points to /candidate-form instead of /candidate */}
+                    <Link
+                        to="/candidate-form"
+                        className="bg-indigo-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-indigo-700 transition shadow-md"
                     >
                         Candidate Portal
-                    </button>
-                    <button
-                        onClick={() => navigate('/recruiter')}
-                        className="w-full py-3 px-4 bg-gray-800 hover:bg-gray-900 text-white font-semibold rounded-lg transition"
+                    </Link>
+
+                    <Link
+                        to="/recruiter"
+                        className="bg-gray-800 text-white py-3 px-6 rounded-lg font-bold hover:bg-gray-900 transition shadow-md"
                     >
                         Recruiter Portal
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
